@@ -8,7 +8,7 @@ class Solution {
         int answer = 0;
         int max = 0;
 
-        // 오름차순으로 정렬
+        // 정렬
         Arrays.sort(citations);
 
         for(int i= citations.length-1; i>=0 ; i--)
