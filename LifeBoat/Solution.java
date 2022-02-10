@@ -1,5 +1,7 @@
 package test.LifeBoat;
 
+import java.util.Arrays;
+
 class Solution {
     public int solution(int[] people, int limit) {
         int start = 0; int end = people.length-1;
