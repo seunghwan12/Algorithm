@@ -7,6 +7,7 @@ package test.BestAlbum;
 import java.util.*;
 
 class Solution {
+    final int arrSize = 3;
 
     Map<String, int[]> map = new HashMap<>();
     /*
@@ -45,7 +46,7 @@ class Solution {
 
         } else {
 
-            int[] arr = new int[3];
+            int[] arr = new int[arrSize];
             int count = plays[uniqueNumber];
             Arrays.fill(arr, -1);
 
