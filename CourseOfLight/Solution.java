@@ -51,11 +51,10 @@ class Solution {
         int count = 0;
 
         do {
-            System.out.printf("curRow = %d ",curRow);
-            System.out.printf("curCol = %d ",curCol);
-            System.out.printf("nextOutDir = %d " ,nextOutDir);
-            System.out.printf("count = %d " ,count);
-
+//            System.out.printf("curRow = %d ",curRow);
+//            System.out.printf("curCol = %d ",curCol);
+//            System.out.printf("nextOutDir = %d " ,nextOutDir);
+//            System.out.printf("count = %d " ,count);
 
             curRow = nextRow; curCol = nextCol;
             curOutDir = nextOutDir;
@@ -65,16 +64,14 @@ class Solution {
 
             findNextLoc(); findNextDir();
 
-            System.out.printf("nextRow = %d ",nextRow);
-            System.out.printf("nextCol = %d ",nextCol);
-            System.out.printf("nextOutDir = %d " ,nextOutDir);
-            System.out.println();
-
+//            System.out.printf("nextRow = %d ",nextRow);
+//            System.out.printf("nextCol = %d ",nextCol);
+//            System.out.printf("nextOutDir = %d " ,nextOutDir);
+//            System.out.println();
 
         } while(!gridWithDir[nextRow][nextCol][nextOutDir]);
-        System.out.println();
-        System.out.println();
-        System.out.println();
+//        System.out.println();
+//        System.out.println();
 
         cycles.add(count);
     }
@@ -146,11 +143,10 @@ class Solution {
         Solution test = new Solution();
         String[] grid = {"SRLR", "RRLR", "SLRR"};
         int[] answer = test.solution(grid);
-        System.out.println();
-        System.out.println();
-        System.out.println();
+//        System.out.println();
+//        System.out.println();
 
-        for(int ans: answer)
-            System.out.println(ans);
+//        for(int ans: answer)
+//            System.out.println(ans);
     }
 }
