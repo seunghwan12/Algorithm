@@ -10,9 +10,9 @@ public class Solution {
     public int solution(String begin, String target, String[] words) {
         if (!targetExists(target, words)) return 0;
 
-        boolean[] visited = new boolean[words.length];
+        boolean[] discovered = new boolean[words.length];
 
-        queue.add(new Step(begin, visited));
+        queue.add(new Step(begin, discovered));
         while (queue.size() != 0) {
             bfs(target, words);
         }
@@ -39,14 +39,14 @@ public class Solution {
             Step cur = queue.remove();
 
             for (int word = 0; word < words.length; word++) {
-                if (checkOneCharDifference(cur.word, words[word]) && !cur.visited[word]) {
+                if (checkOneCharDifference(cur.word, words[word]) && !cur.discovered[word]) {
                     if(target.equals(words[word])) {
                         queue.clear();
                         return;
                     }
-                    boolean[] newVisted = cur.visited.clone();
-                    newVisted[word] = true;
-                    queue.add(new Step(words[word], newVisted));
+                    boolean[] newDiscovered = cur.discovered.clone();
+                    newDiscovered[word] = true;
+                    queue.add(new Step(words[word], newDiscovered));
                 }
             }
         }
@@ -67,10 +67,10 @@ public class Solution {
 
 class Step {
     public String word;
-    public boolean[] visited;
+    public boolean[] discovered;
 
-    public Step(String word, boolean[] visited) {
+    public Step(String word, boolean[] discovered) {
         this.word = word;
-        this.visited = visited;
+        this.discovered = discovered;
     }
 }

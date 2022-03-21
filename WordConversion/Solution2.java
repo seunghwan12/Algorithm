@@ -11,8 +11,8 @@ public class Solution2 {
         if (!targetExists(target, words)) return 0;
 
         // 문자열을 bfs방식으로 탐색할 때 이미 확인한 노드(문자열)은 다시 방문하지 않도록
-        // visited배열을 공유한다.
-        boolean[] visited = new boolean[words.length];
+        // discovered배열을 공유한다.
+        boolean[] discovered = new boolean[words.length];
 
         queue.add(begin);
         while (queue.size() != 0) {
@@ -26,11 +26,11 @@ public class Solution2 {
                 // words에 있는 문자열 중 현재 문자열과 알파벳이 한개가 다르고 방문하지 않은 문자열인 경우에
                 // target이면 종료하고, target이 아니면 queue에 넣는다.
                 for (int word = 0; word < words.length; word++) {
-                    if (checkOneCharDifference(cur, words[word]) && !visited[word]) {
+                    if (checkOneCharDifference(cur, words[word]) && !discovered[word]) {
                         if(target.equals(words[word])) {
                             break;
                         }
-                        visited[word] = true;
+                        discovered[word] = true;
                         queue.add(words[word]);
                     }
                 }
