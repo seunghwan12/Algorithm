@@ -94,7 +94,7 @@ public class Solution {
                 {3, 2, 3},
                 {2, 1, 6}};
         Solution test = new Solution();
-        int answer = test.solution(n, s, a, b, fares);
+        long answer = test.solution(n, s, a, b, fares);
         System.out.println("answer = " + answer);
     }
 }
