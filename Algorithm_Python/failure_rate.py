@@ -21,6 +21,7 @@ def solution(N, stages):
         accum_of_plauers_in_stage[idx] != 0 else 0
 
     # 실패율 리스트의 값에 따라 스테이지의 번호를 정렬
+    # 파이썬 sort(), sorted() 메소드는 안정 정렬(stable)이므로 중복된 키에 대하여 순서대로 정렬한다.
     answer = range_list[1:-1]
     answer.sort(key=lambda x: failure_rate_in_stage[x], reverse=True)
     return answer
